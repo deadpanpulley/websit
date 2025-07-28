@@ -1,0 +1,362 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.game-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 3px 3px 0px #333;
+    margin-bottom: 10px;
+    animation: bounce 2s infinite;
+}
+
+.subtitle {
+    font-size: 1.2rem;  
+    color: #fff;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.game-area {
+    position: relative;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.toilet-paper-roll {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    width: 80px;
+    height: 80px;
+    z-index: 10;
+}
+
+.roll-core {
+    width: 100%;
+    height: 100%;
+    background: #8B4513;
+    border-radius: 50%;
+    border: 3px solid #654321;
+    position: relative;
+}
+
+.roll-core::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 60%;
+    background: #D2B48C;
+    border-radius: 50%;
+    border: 2px solid #8B4513;
+}
+
+.paper-sheets {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+.paper-trail {
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    width: 200px;
+    height: 300px;
+    pointer-events: none;
+}
+
+.paper-sheet {
+    position: absolute;
+    width: 60px;
+    height: 40px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    animation: fallDown 2s linear forwards;
+    transform: rotate(var(--rotation));
+}
+
+.mash-zone {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 150px;
+    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+    border-radius: 20px;
+    border: 4px solid #ff4757;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.1s ease;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.mash-zone:hover {
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+}
+
+.mash-zone:active {
+    transform: translateX(-50%) scale(0.95);
+    background: linear-gradient(45deg, #ff4757, #ff6b6b);
+}
+
+.mash-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 0px #333;
+    margin-bottom: 10px;
+}
+
+.mash-instructions {
+    font-size: 1rem;
+    color: #fff;
+    opacity: 0.9;
+}
+
+.game-stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 0px #333;
+}
+
+.controls {
+    margin: 20px 0;
+}
+
+.start-btn, .reset-btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.start-btn {
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.start-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
+
+.reset-btn {
+    background: linear-gradient(45deg, #2196F3, #1976D2);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.reset-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
+
+.results {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 20px 0;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.results h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.final-stats {
+    margin-bottom: 20px;
+}
+
+.final-stats p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #333;
+}
+
+.meme-message {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff4757;
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 71, 87, 0.1);
+    border-radius: 10px;
+    border-left: 4px solid #ff4757;
+}
+
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    animation: particleFloat 1s linear forwards;
+}
+
+.rip-effect {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff4757;
+    border-radius: 50%;
+    animation: ripExplosion 0.5s ease-out forwards;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes fallDown {
+    0% {
+        transform: translateY(0) rotate(var(--rotation));
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(300px) rotate(var(--rotation));
+        opacity: 0;
+    }
+}
+
+@keyframes particleFloat {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes ripExplosion {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+.paper-sheets.shrinking {
+    animation: shrinkRoll 0.3s ease-in-out;
+}
+
+@keyframes shrinkRoll {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.8); }
+    100% { transform: scale(1); }
+}
+
+.game-over {
+    animation: gameOverShake 0.5s ease-in-out;
+}
+
+@keyframes gameOverShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .game-area {
+        height: 300px;
+    }
+    
+    .mash-zone {
+        width: 250px;
+        height: 120px;
+    }
+    
+    .mash-text {
+        font-size: 1.5rem;
+    }
+} 
