@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Shooter</title>
+    <link rel="stylesheet" href="space-shooter.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <h1>Space Shooter</h1>
+            <p class="subtitle">Defend Earth from the alien invasion!</p>
+        </div>
+
+        <div class="game-area">
+            <canvas id="gameCanvas" width="800" height="600"></canvas>
+            
+            <div class="game-overlay" id="gameOverlay">
+                <div class="start-screen" id="startScreen">
+                    <h2>Space Shooter</h2>
+                    <p>Click to shoot asteroids and enemy ships</p>
+                    <p>Avoid enemy fire and survive as long as possible</p>
+                    <button id="startBtn" class="start-btn">START GAME</button>
+                </div>
+                
+                <div class="game-over-screen" id="gameOverScreen" style="display: none;">
+                    <h2>Game Over</h2>
+                    <div class="final-stats">
+                        <p>Score: <span id="finalScore">0</span></p>
+                        <p>Time Survived: <span id="finalTime">0</span>s</p>
+                        <p>Enemies Destroyed: <span id="finalEnemies">0</span></p>
+                    </div>
+                    <button id="restartBtn" class="restart-btn">PLAY AGAIN</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-stats">
+            <div class="stat">
+                <span class="stat-label">Score:</span>
+                <span class="stat-value" id="score">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Time:</span>
+                <span class="stat-value" id="time">0</span>s
+            </div>
+            <div class="stat">
+                <span class="stat-label">Lives:</span>
+                <span class="stat-value" id="lives">3</span>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <p>Click to shoot | Move mouse to aim | Survive as long as possible</p>
+        </div>
+    </div>
+
+    <script src="space-shooter.js"></script>
+</body>
+</html> 

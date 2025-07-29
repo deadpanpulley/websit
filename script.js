@@ -70,7 +70,7 @@ class ToiletPaperDash {
             }
         };
     }
-    
+                 
     startGame() {
         this.gameActive = true;
         this.timeLeft = 10;
@@ -84,7 +84,7 @@ class ToiletPaperDash {
         this.updateDisplay();
         this.startTimer();
         
-        // Add some initial excitement
+        
         this.createParticles(this.elements.mashZone, 10);
         this.sounds.click();
     }
