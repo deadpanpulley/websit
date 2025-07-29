@@ -328,5 +328,3 @@ document.head.appendChild(style);
 document.addEventListener('DOMContentLoaded', () => {
     new ToiletPaperDash();
 }); 
-
-
