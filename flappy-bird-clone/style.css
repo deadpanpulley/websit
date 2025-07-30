@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #70c5ce;
+}
+
+canvas {
+    display: block;
+    margin: 0 auto;
+    background-color: #70c5ce;
+    border: 2px solid #ffffff;
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+}
+
+.score {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #ffffff;
+    font-size: 24px;
+    font-family: 'Arial', sans-serif;
+}
+
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffffff;
+    font-size: 36px;
+    font-family: 'Arial', sans-serif;
+}
