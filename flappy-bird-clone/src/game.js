@@ -5,6 +5,7 @@ let bird;
 let pipes = [];
 let score = 0;
 let gameActive = false;
+let frames = 0; 
 
 function startGame() {
     bird = new Bird();
@@ -63,8 +64,3 @@ document.addEventListener('keydown', () => {
         startGame();
     }
 });
-
-const frames = 0;
-setInterval(() => {
-    frames++;
-}, 1000 / 60);
