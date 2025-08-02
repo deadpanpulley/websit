@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Game Emulator</title>
+    <link rel="stylesheet" href="retro-emulator.css">
+</head>
+<body>
+    <div class="emulator-container">
+        
+        <div class="crt-overlay"></div>
+        
+        
+        <div class="emulator-interface">
+         
+            <div class="emulator-header">
+                <div class="power-light"></div>
+                <h1>RETRO GAME STATION</h1>
+                <div class="status-indicator">ONLINE</div>
+            </div>
+            
+          
+            <div class="game-selection">
+                <div class="selection-header">
+                    <h2>GAME LIBRARY</h2>
+                    <div class="selection-nav">
+                        <button class="nav-btn" id="prevBtn">◀</button>
+                        <span id="gameCounter">1/4</span>
+                        <button class="nav-btn" id="nextBtn">▶</button>
+                    </div>
+                </div>
+                
+                <div class="game-grid">
+                    <div class="game-card active" data-game="tetris">
+                        <div class="game-icon"></div>
+                        <h3>TETRIS</h3>
+                        <p>Classic falling blocks</p>
+                        <div class="game-status">READY</div>
+                    </div>
+                    
+                    <div class="game-card" data-game="flappy-bird">
+                        <div class="game-icon"></div>
+                        <h3>FLAPPY BIRD</h3>
+                        <p>Navigate through pipes</p>
+                        <div class="game-status">READY</div>
+                    </div>
+                    
+                    <div class="game-card" data-game="space-shooter">
+                        <div class="game-icon"></div>
+                        <h3>SPACE SHOOTER</h3>
+                        <p>Defend against aliens</p>
+                        <div class="game-status">READY</div>
+                    </div>
+                    
+                    <div class="game-card" data-game="toilet-paper">
+                        <div class="game-icon"></div>
+                        <h3>TOILET PAPER DASH</h3>
+                        <p>Mash like your life depends on it!</p>
+                        <div class="game-status">READY</div>
+                    </div>
+                </div>
+            </div>
+            
+           
+            <div class="control-panel">
+                <div class="control-section">
+                    <h3>CONTROLS</h3>
+                    <div class="control-buttons">
+                        <button class="control-btn" id="startBtn">START</button>
+                        <button class="control-btn" id="pauseBtn">PAUSE</button>
+                        <button class="control-btn" id="resetBtn">RESET</button>
+                    </div>
+                </div>
+                
+                <div class="control-section">
+                    <h3>SETTINGS</h3>
+                    <div class="settings">
+                        <label>
+                            <input type="checkbox" id="crtEffect" checked>
+                            CRT Effect
+                        </label>
+                        <label>
+                            <input type="checkbox" id="scanlines" checked>
+                            Scanlines
+                        </label>
+                        <label>
+                            <input type="range" id="volume" min="0" max="100" value="50">
+                            Volume
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+           
+            <div class="game-display" id="gameDisplay">
+                <div class="display-header">
+                    <span class="display-label">GAME VIEW</span>
+                    <span class="display-status">NO GAME LOADED</span>
+                </div>
+                <div class="display-content">
+                    <div class="welcome-screen">
+                        <h2>🎮 RETRO GAME STATION 🎮</h2>
+                        <p>Select a game from the library to begin</p>
+                        <div class="loading-animation">
+                            <div class="loading-dot"></div>
+                            <div class="loading-dot"></div>
+                            <div class="loading-dot"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="game-frame" id="gameFrame" style="display: none;">
+            <div class="frame-header">
+                <span class="frame-title">GAME RUNNING</span>
+                <button class="close-btn" id="closeGame">✕</button>
+            </div>
+            <iframe id="gameIframe" src="" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <script src="retro-emulator.js"></script>
+</body>
+</html>
