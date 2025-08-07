@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DONKEY KONG</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #000;
+            overflow: hidden;
+            font-family: 'Press Start 2P', cursive;
+        }
+        
+        #game-container {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background: #000;
+            overflow: hidden;
+        }
+        
+        #game-canvas {
+            background: #000;
+        }
+        
+        #start-screen, #game-over, #level-complete {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.8);
+        }
+        
+        h1 {
+            color: #ff0000;
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 4px 4px 0 #000;
+        }
+        
+        button {
+            margin-top: 30px;
+            padding: 15px 30px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.2em;
+            background: #ff0000;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        button:hover {
+            background: #ff3333;
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="game-canvas" width="800" height="600"></canvas>
+        
+        <div id="start-screen">
+            <h1>DONKEY KONG</h1>
+            <p>Save the princess from Donkey Kong!</p>
+            <p>Use arrow keys to move and up to jump</p>
+            <button id="start-button">START GAME</button>
+        </div>
+        
+        <div id="game-over" class="hidden">
+            <h1>GAME OVER</h1>
+            <p id="final-score">Score: 0</p>
+            <button id="restart-button">PLAY AGAIN</button>
+        </div>
+        
+        <div id="level-complete" class="hidden">
+            <h1>LEVEL COMPLETE!</h1>
+            <p>Get ready for the next level</p>
+            <button id="next-level-button">NEXT LEVEL</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

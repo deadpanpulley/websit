@@ -5,7 +5,8 @@ class RetroEmulator {
             { name: 'tetris', file: 'TETRIS/tetris.html', icon: '', title: 'TETRIS' },
             { name: 'flappy-bird', file: 'FLAPPY BIRD/flappy-bird.html', icon: '', title: 'FLAPPY BIRD' },
             { name: 'space-shooter', file: 'SPACE-SHOOTER/space-shooter.html', icon: '', title: 'SPACE SHOOTER' },
-            { name: 'toilet-paper', file: 'TOILET/game.html', icon: '', title: 'TOILET PAPER DASH' }
+            { name: 'toilet-paper', file: 'TOILET/game.html', icon: '', title: 'TOILET PAPER DASH' },
+            { name: 'donkey-kong', file: 'DONKEY-KONG/index.html', icon: '', title: 'DONKEY KONG' }
         ];
         this.isGameRunning = false;
         this.currentGameFrame = null;
