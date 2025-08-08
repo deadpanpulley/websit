@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Particle Dance</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #121212;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+        }
+        canvas {
+            display: block;
+        }
+        #instructions {
+            position: absolute;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            max-width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas"></canvas>
+    <div id="instructions">
+        <h2>Particle Dance</h2>
+        <p>Move your mouse to attract particles</p>
+        <p>Click to create a ripple effect</p>
+        <p>Press SPACE to change color theme</p>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
